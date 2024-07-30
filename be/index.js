@@ -38,6 +38,15 @@ app.post("/register", async (req, res) => {
   }
 });
 
+app.get("/user", async (req, res) => {
+  try {
+    const response = await AuthModel.find();
+    res.json(response);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 app.listen(4000, () => {
-  console.log("Server is running on port 3001");
+  console.log("Server is running on port 4000");
 });
